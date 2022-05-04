@@ -1,77 +1,61 @@
-import Head from 'next/head'
+import Work from '../components/Work'
+import useSWR from 'swr'
+import { useRouter } from 'next/router'
+import { en } from '../locales/en'
+import { ru } from '../locales/ru'
 
 export default function Home() {
-  return (
-	
+  const fetcher = (url) => fetch(url).then((res) => res.json())
+
+  const { data, error } = useSWR('/api/works', fetcher)
+  
+  const router = useRouter()
+  const t = router.locale === 'ru' ? ru : en
+
+  if (error) return <div>Failed to load</div>
+  if (!data) return <div>Loading...</div>
+    return (
     <div className="portfolio">
         <div className="container">
             <div className="row portfolio-row">
                 <div className="col-md-12 portfolio-col">
-                    <h3>Portfolio of works</h3>
+                    <h3>{t.portfolio}</h3>
                 </div>
-                <div className="col-md-6 portfolio-col" data-aos="fade-up" data-aos-duration="500">
-                    <figure className="figure">
-                        <a href="#"><img src="images/banner-bg.jpg" className="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure." /></a>
-                        <figcaption className="figure-caption">
-                            <h5>Website for <span><a href="#">Aloka Genius</a></span></h5>
-                            <h6>Designed on 12-12-2017</h6>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem m has been the industry's printer took a galley of and typesetting industry. Lorem Ipsum has been the industry's printer took a galley Of type and Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and scrambled...crambled......</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div className="col-md-6 portfolio-col" data-aos="fade-up" data-aos-duration="500">
-                    <figure className="figure">
-                        <a href="#"><img src="images/banner-bg.jpg" className="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure."/></a>
-                        <figcaption className="figure-caption">
-                            <h5>Website for <span><a href="#">Aloka Genius</a></span></h5>
-                            <h6>Designed on 12-12-2017</h6>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem m has been the industry's printer took a galley of and typesetting industry. Lorem Ipsum has been the industry's printer took a galley Of type and Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and scrambled...crambled......</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div className="col-md-6 portfolio-col" data-aos="fade-up" data-aos-duration="500">
-                    <figure className="figure">
-                        <a href="#"><img src="images/banner-bg.jpg" className="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure."/></a>
-                        <figcaption className="figure-caption">
-                            <h5>Website for <span><a href="#">Aloka Genius</a></span></h5>
-                            <h6>Designed on 12-12-2017</h6>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem m has been the industry's printer took a galley of and typesetting industry. Lorem Ipsum has been the industry's printer took a galley Of type and Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and scrambled...crambled......</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div className="col-md-6 portfolio-col" data-aos="fade-up" data-aos-duration="500">
-                    <figure className="figure">
-                        <a href="#"><img src="images/banner-bg.jpg" className="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure."/></a>
-                        <figcaption className="figure-caption">
-                            <h5>Website for <span><a href="#">Aloka Genius</a></span></h5>
-                            <h6>Designed on 12-12-2017</h6>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem m has been the industry's printer took a galley of and typesetting industry. Lorem Ipsum has been the industry's printer took a galley Of type and Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and scrambled...crambled......</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div className="col-md-6 portfolio-col" data-aos="fade-up" data-aos-duration="500">
-                    <figure className="figure">
-                        <a href="#"><img src="images/banner-bg.jpg" className="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure."/></a>
-                        <figcaption className="figure-caption">
-                            <h5>Website for <span><a href="#">Aloka Genius</a></span></h5>
-                            <h6>Designed on 12-12-2017</h6>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem m has been the industry's printer took a galley of and typesetting industry. Lorem Ipsum has been the industry's printer took a galley Of type and Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and scrambled...crambled......</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div className="col-md-6 portfolio-col" data-aos="fade-up" data-aos-duration="500">
-                    <figure className="figure">
-                        <a href="#"><img src="images/banner-bg.jpg" className="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure."/></a>
-                        <figcaption className="figure-caption">
-                            <h5>Website for <span><a href="#">Aloka Genius</a></span></h5>
-                            <h6>Designed on 12-12-2017</h6>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem m has been the industry's printer took a galley of and typesetting industry. Lorem Ipsum has been the industry's printer took a galley Of type and Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's printer took a galley of type and scrambled...crambled......</p>
-                        </figcaption>
-                    </figure>
-                </div>
+				{data.map((p, i) => {
+				  return (
+					<Work key={i} work={p} />
+				  )
+			 	 }
+				)}
+				
+                
             </div>
         </div>
-      <style jsx>{`
+<style jsx>{`
+.portfolio {
+    width: 100%;
+    height: auto;
+    padding-top: 70px;
+    padding-bottom: 120px;
+}
+
+.portfolio .portfolio-row {
+    margin-left: -30px;
+    margin-right: -30px;
+}
+
+.portfolio .portfolio-col {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.portfolio h3 {
+    color: #ad3284;
+    font-size: 32px;
+    font-weight: 400;
+    padding-bottom: 40px;
+    text-transform: uppercase;
+}
 
       `}</style>
 	</div>
