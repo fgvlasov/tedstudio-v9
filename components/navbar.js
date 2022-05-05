@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import { useRouter } from "next/router"
 import {
   Box,
@@ -9,12 +8,11 @@ import {
   Button,
   IconButton,
   useDisclosure,
-  useColorModeValue,
+  //useColorModeValue,
   Stack,
   useColorMode,
-  Center,
 } from '@chakra-ui/react';
-import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, MoonIcon, SunIcon, CloseIcon  } from '@chakra-ui/icons';
 
 const navLinks = [
 	{ title: 'Home', path: '/'},
@@ -28,7 +26,7 @@ const dfLink = ({children}) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      //bg: useColorModeValue('gray.200', 'gray.700'),
     }}
     href={'#'}>
     {children}
@@ -61,23 +59,23 @@ export default function Nav() {
               display={{ base: 'none', md: 'flex' }}>
 				{navLinks.map((link) => (
                   <Link     
+				    key={link.title}
 				    px={2}
 					py={1}
 					rounded={'md'}
 					_hover={{
 					textDecoration: 'none',
-					bg: useColorModeValue('gray.200', 'gray.700'),
+					//bg: useColorModeValue('gray.200', 'gray.700'),
 					}}
-					{...router.pathname === link.path ? {textDecoration: 'none',bg: useColorModeValue('gray.200', 'gray.700')} : " "}
+					{...router.pathname === link.path ? {textDecoration: 'none',
+						//bg: useColorModeValue('gray.200', 'gray.700')
+					} : " "}
 					
 					href={link.path}>{link.title}</Link>
 				))}
               
             </HStack>
           </HStack>
-
-
-
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
               <Button onClick={toggleColorMode}>

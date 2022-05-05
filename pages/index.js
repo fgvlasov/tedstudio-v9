@@ -2,9 +2,7 @@ import {
   Container,
   Heading,
   Stack,
-  Text,
   Link,
-  Button,
   Flex
 
 } from '@chakra-ui/react'
