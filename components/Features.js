@@ -22,7 +22,7 @@ const Feature = ({ title, text, icon }) => {
   );
 };
 
-export default function SimpleThreeColumns() {
+export default function features() {
   return (
     <Box p={8}>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>

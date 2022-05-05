@@ -6,7 +6,7 @@ import {
 
 } from '@chakra-ui/react'
 
-export default function IndexAbout() {
+export default function indexabout() {
   return (
     <Container maxW={'5xl'}>
       <Stack

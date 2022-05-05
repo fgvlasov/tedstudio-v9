@@ -3,7 +3,7 @@ import Navbar from './navbar.js'
 import Footer from './footer.js'
 import Features from './features.js'
 
-export default function Layout({ children }) {
+export default function layout({ children }) {
 
   return (
     <>
