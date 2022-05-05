@@ -8,7 +8,7 @@ import {
   Button,
   IconButton,
   useDisclosure,
-  //useColorModeValue,
+  useColorModeValue,
   Stack,
   useColorMode,
 } from '@chakra-ui/react';
@@ -28,7 +28,7 @@ const dfLink = ({children}) => (
       textDecoration: 'none',
       //bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={'#'}>
+    href={children}>
     {children}
   </Link>
 );

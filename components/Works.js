@@ -18,7 +18,7 @@ import {
 export default function Works({ work }) {
   const features = [work.type];
   const listItems = features.map((item) =>
-    <ListItem key={i} display={'block'}>{item}</ListItem>
+    <ListItem key={item} display={'block'}>{item}</ListItem>
   )
   return (
     <Container maxW={'7xl'}>

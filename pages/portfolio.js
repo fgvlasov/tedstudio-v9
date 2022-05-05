@@ -9,6 +9,8 @@ import {
 import useSWR from 'swr'
 import Features from '../components/Features.js'
 import Works from '../components/Works.js'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 export default function Portfolio() {
   const fetcher = (url) => fetch(url).then((res) => res.json())
@@ -18,9 +20,9 @@ export default function Portfolio() {
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
     return (
-
+	<>
+    <Navbar />
 	<Container maxW={'5xl'} py={{ base: 8, md: 10 }}>
-	  
       <Stack
         textAlign={'center'}
         align={'center'}
@@ -64,5 +66,7 @@ export default function Portfolio() {
       </Flex>
 	  <Features />
     </Container>
+    <Footer />
+	</>
   )
 }

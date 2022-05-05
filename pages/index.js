@@ -10,6 +10,8 @@ import IndexAbout from '../components/IndexAbout'
 import useSWR from 'swr'
 import Features from '../components/Features.js'
 import Works from '../components/Works.js'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 export default function Home() {
   const fetcher = (url) => fetch(url).then((res) => res.json())
@@ -19,7 +21,8 @@ export default function Home() {
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
     return (
-
+	<>
+    <Navbar />
 	<Container maxW={'5xl'}>
 	  <IndexAbout />
       <Stack
@@ -66,5 +69,7 @@ export default function Home() {
       </Flex>
 	  <Features />
     </Container>
+    <Footer />
+	</>
   )
 }
