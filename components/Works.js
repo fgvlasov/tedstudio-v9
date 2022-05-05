@@ -6,7 +6,6 @@ import {
   Image,
   Flex,
   VStack,
-  Button,
   Link,
   Heading,
   SimpleGrid,
@@ -15,7 +14,6 @@ import {
   List,
   ListItem,
 } from '@chakra-ui/react';
-import { MdLocalShipping } from 'react-icons/md';
 
 export default function Works({ work }) {
   const features = [work.type];
