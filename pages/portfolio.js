@@ -4,13 +4,12 @@ import {
   Stack,
   Link,
   Flex
-
 } from '@chakra-ui/react'
 import useSWR from 'swr'
-import Features from '../components/Features.js'
-import Works from '../components/Works.js'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Features from '../components/features.js'
+import Works from '../components/works.js'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
 export default function Portfolio() {
   const fetcher = (url) => fetch(url).then((res) => res.json())
