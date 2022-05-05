@@ -20,7 +20,7 @@ import { MdLocalShipping } from 'react-icons/md';
 export default function Works({ work }) {
   const features = [work.type];
   const listItems = features.map((item) =>
-    <ListItem display={'block'}>{item}</ListItem>
+    <ListItem key={item} display={'block'}>{item}</ListItem>
   )
   return (
     <Container maxW={'7xl'}>
