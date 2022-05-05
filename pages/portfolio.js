@@ -2,18 +2,15 @@ import {
   Container,
   Heading,
   Stack,
-  Text,
   Link,
-  Button,
   Flex
 
 } from '@chakra-ui/react'
-import IndexAbout from '../components/IndexAbout'
 import useSWR from 'swr'
 import Features from '../components/Features.js'
 import Works from '../components/Works.js'
 
-export default function Home() {
+export default function Portfolio() {
   const fetcher = (url) => fetch(url).then((res) => res.json())
 
   const { data, error } = useSWR('/api/works', fetcher)
@@ -22,8 +19,8 @@ export default function Home() {
   if (!data) return <div>Loading...</div>
     return (
 
-	<Container maxW={'5xl'}>
-	  <IndexAbout />
+	<Container maxW={'5xl'} py={{ base: 8, md: 10 }}>
+	  
       <Stack
         textAlign={'center'}
         align={'center'}
@@ -36,17 +33,17 @@ export default function Home() {
           Portfolio
         </Heading>
 		{data.map((p, i) => {
-			while (i < 2) {
+			
 		  return (
 			<Works key={i} work={p} />
 		  )
-			}
+			
 		  }
 		)}
 	  </Stack>
 	  <Flex h="20vh" justifyContent="center" alignItems="center">
 		<Link
-			href={"/portfolio"}
+			href={"/"}
 			p={4}
 			fontSize={'md'}
 			rounded={'10'}
@@ -61,9 +58,8 @@ export default function Home() {
 			}}
 			_focus={{
 			bg: 'blue.500',
-			color: 'white',
 			}}>
-			View Portfolio
+			Main Page
 		</Link>
       </Flex>
 	  <Features />
