@@ -6,7 +6,6 @@ import {
   Flex
 } from '@chakra-ui/react'
 import useSWR from 'swr'
-import Features from '../components/features.js'
 import Works from '../components/works.js'
 
 export default function Portfolio() {
@@ -59,7 +58,6 @@ export default function Portfolio() {
 			Main Page
 		</Link>
       </Flex>
-	  <Features />
     </Container>
   )
 }

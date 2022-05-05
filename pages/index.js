@@ -8,7 +8,6 @@ import {
 } from '@chakra-ui/react'
 import IndexAbout from '../components/indexabout.js'
 import useSWR from 'swr'
-import Features from '../components/features.js'
 import Works from '../components/works.js'
 
 export default function Home() {
@@ -63,7 +62,6 @@ export default function Home() {
 			View Portfolio
 		</Link>
       </Flex>
-	  <Features />
     </Container>
   )
 }
