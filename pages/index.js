@@ -6,12 +6,10 @@ import {
   Flex
 
 } from '@chakra-ui/react'
-import IndexAbout from '../components/indexabout'
+import IndexAbout from '../components/indexabout.js'
 import useSWR from 'swr'
 import Features from '../components/features.js'
 import Works from '../components/works.js'
-import Navbar from '../components/navbar'
-import Footer from '../components/footer'
 
 export default function Home() {
   const fetcher = (url) => fetch(url).then((res) => res.json())
@@ -21,8 +19,6 @@ export default function Home() {
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
     return (
-	<>
-    <Navbar />
 	<Container maxW={'5xl'}>
 	  <IndexAbout />
       <Stack
@@ -69,7 +65,5 @@ export default function Home() {
       </Flex>
 	  <Features />
     </Container>
-    <Footer />
-	</>
   )
 }
