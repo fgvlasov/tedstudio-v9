@@ -6,7 +6,7 @@ import {
   Flex
 } from '@chakra-ui/react'
 import useSWR from 'swr'
-import Works from '/components/works.js'
+import Works from '/components/works-1.js'
 
 export default function Portfolio() {
   const fetcher = (url) => fetch(url).then((res) => res.json())
