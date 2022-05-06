@@ -19,25 +19,12 @@ const navLinks = [
 	{ title: 'Portfolio', path: '/portfolio'}
 ]
 
-const dfLink = ({children}) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      //bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
-    href={children}>
-    {children}
-  </Link>
-);
-
 export default function Nav() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter(); 
-  
+  const color = useColorModeValue('gray.200', 'gray.700')
+
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -66,10 +53,9 @@ export default function Nav() {
 					_hover={{
 					textDecoration: 'none',
 					//bg: useColorModeValue('gray.200', 'gray.700'),
+					bg: {color},
 					}}
-					{...router.pathname === link.path ? {textDecoration: 'none',
-						//bg: useColorModeValue('gray.200', 'gray.700')
-					} : " "}
+					{...router.pathname === link.path ? { bg: 'blue.100'	} : " "}
 					
 					href={link.path}>{link.title}</Link>
 				))}
@@ -86,6 +72,27 @@ export default function Nav() {
             </Stack>
           </Flex>
         </Flex>
+        {isOpen ? (
+          <Box pb={4} display={{ md: 'none' }}>
+            <Stack as={'nav'} spacing={4}>
+              {navLinks.map((link) => (
+                  <Link     
+				    key={link.title}
+				    px={2}
+					py={1}
+					rounded={'md'}
+					_hover={{
+					textDecoration: 'none',
+					//bg: useColorModeValue('gray.200', 'gray.700'),
+					bg: {color},
+					}}
+					{...router.pathname === link.path ? {bg: 'blue.100'} : " "}
+					
+					href={link.path}>{link.title}</Link>
+              ))}
+            </Stack>
+          </Box>
+        ) : null}		
       </Box>
     </>
   );
