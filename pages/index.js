@@ -6,9 +6,9 @@ import {
   Flex
 
 } from '@chakra-ui/react'
-import IndexAbout from '../components/indexabout.js'
+import IndexAbout from '/components/indexabout.js'
 import useSWR from 'swr'
-import Works from '../components/works.js'
+import Works from '/components/works.js'
 
 export default function Home() {
   const fetcher = (url) => fetch(url).then((res) => res.json())
