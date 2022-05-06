@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 import { Box, SimpleGrid, Icon, Text, Stack, Flex } from '@chakra-ui/react';
 import { FcTemplate, FcList, FcDataConfiguration } from 'react-icons/fc';
 
