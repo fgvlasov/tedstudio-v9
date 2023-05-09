@@ -19,7 +19,7 @@ export const portfolio_works = [
 		id: 3,
 		title: 'Ceramica Karelia',
 		image: '/images/works/works_ceramica.jpg',
-		url: 'https://ceramicakarelia.ru',
+		url: 'https://ceramicakarelia.com',
 		type: 'Prestashop, Jquery, CSS, BEM, Sass',
 		text: "The client asked to make an online store, choose a suitable content management system with the ability to order goods. It was necessary to parse goods from other sites and upload them to the database."
 	},
