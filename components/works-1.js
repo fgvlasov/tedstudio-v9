@@ -26,12 +26,12 @@ export default function Works({ work }) {
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
         py={{ base: 9, md: 12 }}>
-        <Flex>
+        <Flex height={'fit-content'}>
           <Image
             rounded={'md'}
             alt={'product image'}
             src={work.image}  
-            fit={'cover'}
+            fit={'contain'}
             align={'center'}
 			type= {'lazy'}
 			boxShadow={
