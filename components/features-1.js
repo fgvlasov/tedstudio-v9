@@ -36,14 +36,14 @@ export default function features() {
           icon={<Icon as={FcTemplate} w={10} h={10} />}
           title={'DevTools'}
           text={
-            'HTML, Github, Gitlab, Codepen, Bootstrap, Tailwind, VSCode'
+            'HTML5, SCSS, Javascript, PHP, Git, Bootstrap, Tailwind.css, VSCode, Docker'
           }
         />
         <Feature
           icon={<Icon as={FcDataConfiguration} w={10} h={10} />}
           title={'Frameworks'}
           text={
-            'Next.js, Drupal, Wordpress, Wix, Prestashop'
+            'Next.js, Drupal, Wordpress, Strapi.io, Wix, Prestashop'
           }
         />
       </SimpleGrid>

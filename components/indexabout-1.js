@@ -24,7 +24,7 @@ export default function indexabout() {
           </Text>
         </Heading>
         <Text color={'grey.500'} maxW={'3xl'}>
-          I’m a Front-End Developer located in Georgia. Also i am a full-stack developer of websites on different platforms, selecting them for customers.
+          I’m a Front-End Developer located in Finland, Jyväskylä. Also i am a full-stack developer of websites on different platforms, selecting them for customers.
         </Text>
         <Text color={'grey.500'} maxW={'3xl'}>
           Well-organised person, problem solver, independent employee with high attention to detail. 

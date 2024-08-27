@@ -49,9 +49,9 @@ export default function Footer() {
         spacing={4}
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}>
-        <Text>© 2022 Made on Chakra Templates. Vlasov Fedor Portfolio website.</Text>
+        <Text>© 2024 Made on Next.js, Vlasov Fedor Portfolio website.</Text>
         <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'Telegram'} href={'https://t.me/ted_bred'}>
+          <SocialButton label={'Telegram'} href={'https://t.me/ted_bread'}>
             <FaTelegram />
           </SocialButton>
           <SocialButton label={'Github'} href={'https://github.com/fgvlasov/'}>
