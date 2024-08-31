@@ -4,7 +4,7 @@ export const portfolio_works = [
     title: 'Invert 3D studio',
     image: '/images/works/work_invert.jpg',
     url: 'https://invert.studio',
-    type: 'React, Next.js, Strapi.io, Docker, Tailwind.css',
+    type: 'React, Next.js, Strapi.io, Docker, Tailwind.css, Figma prototype',
     text: 'Services for 3D visualization of architectural objects and objects, the creation of video clips based on 3D technology. We have a strong technical base and extensive experience, so we can offer a competitive product.',
   },
   {
@@ -20,7 +20,7 @@ export const portfolio_works = [
     title: 'Natmatch.com - Application',
     image: '/images/works/work_natmatch.jpg',
     url: 'https://natmatch.com',
-    type: 'Next.js, Chakra-ui.com, Sass, Figma prototype',
+    type: 'Next.js, Chakra-ui.com, SCSS, Figma prototype',
     text: 'Modern refactoring of The NMS Match Platform which is a modular, customizable, online system with tools to facilitate the full selection process for all stakeholders.',
   },
   {
@@ -28,7 +28,7 @@ export const portfolio_works = [
     title: 'Cental republic dispancery',
     image: '/images/works/work_crb.jpg',
     url: 'https://crb.onego.ru',
-    type: 'Wordpress, Sass, Jquery',
+    type: 'Wordpress, SCSS, jQuery',
     text: 'The republican hospital website was redesigned with the transfer of all files and documents and designing new Figma original template.',
   },
   {
@@ -36,7 +36,7 @@ export const portfolio_works = [
     title: 'Asystems',
     image: '/images/works/work_asystems.jpg',
     url: 'https://a-systems.ru.com/',
-    type: 'Drupal 10, CSS, Sass',
+    type: 'Drupal 10, PHP, SCSS',
     text: 'The company implements and develops secure information systems based on its own technological solutions and those of its partners.',
   },
   {
@@ -44,7 +44,7 @@ export const portfolio_works = [
     title: 'Italian Ceramics',
     image: '/images/works/work_ceramics.jpg',
     url: 'https://ceramicakarelia.com',
-    type: 'Prestashop, Jquery, CSS, BEM, Sass',
+    type: 'Prestashop, jQuery, CSS, BEM, SCSS',
     text: 'The client asked to make an online store, choose a suitable content management system with the ability to order goods. It was necessary to parse goods from other sites and upload them to the database.',
   },
   {
@@ -60,7 +60,7 @@ export const portfolio_works = [
   //     title: 'Concut website',
   //     image: '/images/works/works_concut.jpg',
   //     url: 'https://concut.ru',
-  //     type: 'Drupal, CSS, Sass',
+  //     type: 'Drupal, CSS, SCSS',
   //     text: 'Customer provides hole drilling service. The site was made using BEM technology from a layout from Figma. Next, the layout was added to templates on Drupal 7. Multiple animations were made for design blocks on css 3.0.',
   //   },
 ];

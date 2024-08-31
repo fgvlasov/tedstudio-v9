@@ -51,7 +51,7 @@ export default function Footer() {
         align={{ base: 'center', md: 'center' }}>
         <Text>© 2024 Made on Next.js, Vlasov Fedor Portfolio website.</Text>
         <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'Telegram'} href={'https://t.me/ted_bread'}>
+          <SocialButton label={'Telegram'} href={'https://t.me/ted_beard'}>
             <FaTelegram />
           </SocialButton>
           <SocialButton label={'Github'} href={'https://github.com/fgvlasov/'}>
